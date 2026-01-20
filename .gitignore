@@ -1,0 +1,63 @@
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+.vscode/
+.idea/
+
+# =========================
+# Laravel (backend/)
+# Based on GitHub Laravel.gitignore
+# =========================
+backend/vendor/
+backend/node_modules/
+backend/npm-debug.log
+backend/yarn-error.log
+
+backend/public/storage
+backend/public/hot
+backend/storage/*.key
+backend/.env
+backend/.env.backup
+backend/.env.production
+backend/auth.json
+backend/.phpunit.result.cache
+backend/public/build
+backend/storage/pail
+
+# If your Laravel is at root (not in backend/), also ignore these:
+vendor/
+node_modules/
+public/storage
+public/hot
+storage/*.key
+.env
+.env.backup
+.env.production
+auth.json
+.phpunit.result.cache
+/public/build
+/storage/pail
+
+# =========================
+# React (frontend/)
+# =========================
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# =========================
+# Logs
+# =========================
+*.log
