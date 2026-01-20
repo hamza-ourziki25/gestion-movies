@@ -1,0 +1,183 @@
+/* src/pages/mylists.css */
+.lists-page {
+  padding: 40px;
+  background-color: #0f0f0f;
+  min-height: 100vh;
+  color: white;
+}
+
+.page-header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #222;
+  padding-bottom: 20px;
+}
+
+.lists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* THE LIST CARD */
+.list-card {
+  background: #161616;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #222;
+}
+
+.list-card:hover {
+  transform: translateY(-5px);
+  border-color: #333;
+}
+
+/* POSTER PREVIEW (Collage of 4 items) */
+.list-preview {
+  height: 200px;
+  background: #222;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 columns */
+  position: relative;
+}
+
+.preview-poster {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-right: 1px solid #000;
+}
+
+/* If list is empty */
+.empty-preview {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  background: #1a1a1a;
+}
+
+/* TEXT CONTENT */
+.list-info {
+  padding: 20px;
+}
+
+.list-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.list-meta {
+  color: #888;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* src/pages/mylists.css */
+
+/* ... existing styles ... */
+
+/* CREATE LIST POPUP */
+.create-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+
+.create-popup {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #333;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.create-popup h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.popup-input {
+  width: 100%;
+  padding: 12px;
+  background: #0f0f0f;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.popup-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.popup-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-confirm { background: #3a86ff; color: white; }
+.btn-confirm:hover { background: #2a76ef; }
+
+.btn-cancel { background: #333; color: white; }
+.btn-cancel:hover { background: #444; }
+
+/* src/pages/mylists.css */
+
+.list-card {
+  position: relative; /* Needed for positioning the delete button */
+}
+
+.delete-list-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #444;
+  color: #ff4757; /* Red color */
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10; /* Sit on top of images */
+  opacity: 0; /* Hidden by default */
+  transition: all 0.3s ease;
+}
+
+/* Show button when hovering over the card */
+.list-card:hover .delete-list-btn {
+  opacity: 1;
+}
+
+.delete-list-btn:hover {
+  background: #ff4757;
+  color: white;
+  transform: scale(1.1);
+  border-color: #ff4757;
+}

@@ -1,0 +1,194 @@
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: #161616;
+  width: 400px;
+  border-radius: 16px;
+  border: 1px solid #333;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  animation: scaleIn 0.2s ease;
+  max-height: 85vh; /* Maximum height is 85% of screen */
+  overflow-y: auto; 
+}
+
+.modal-header h2 {
+  margin: 0 0 20px 0;
+  color: white;
+  text-align: center;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: none; border: none;
+  color: #888; font-size: 1.5rem; cursor: pointer;
+}
+
+/* --- PRO INPUT STYLES --- */
+
+.hidden-input { display: none; }
+
+.create-input {
+  width: 100%; padding: 12px;
+  background: #0f0f0f; border: 1px solid #333;
+  color: white; border-radius: 8px;
+  margin-top: 5px;
+}
+
+.create-btn {
+  width: 100%; padding: 12px; margin-top: 20px;
+  background: #3a86ff; color: white;
+  border: none; border-radius: 8px;
+  cursor: pointer; font-weight: bold;
+}
+
+/* AVATAR UPLOADER */
+.avatar-upload-container {
+  display: flex; justify-content: center; margin-bottom: 20px;
+}
+
+.avatar-preview-box {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background-color: #2a2a2a;
+  background-size: cover; background-position: center;
+  position: relative; overflow: hidden;
+  border: 3px solid #333; cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.avatar-preview-box:hover { border-color: #3a86ff; }
+
+/* BANNER UPLOADER */
+.banner-upload-container { margin-bottom: 15px; }
+
+.banner-preview-box {
+  width: 100%; height: 100px;
+  border-radius: 12px;
+  background-color: #2a2a2a;
+  background-size: cover; background-position: center;
+  position: relative; overflow: hidden;
+  border: 2px dashed #444; cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.banner-preview-box:hover { border-color: #3a86ff; border-style: solid; }
+
+/* HOVER OVERLAY */
+.upload-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  opacity: 0; transition: opacity 0.2s ease;
+}
+
+.avatar-preview-box:hover .upload-overlay,
+.banner-preview-box:hover .upload-overlay { opacity: 1; }
+
+.upload-icon { font-size: 1.5rem; margin-bottom: 5px; }
+.upload-text { font-size: 0.7rem; color: white; font-weight: bold; text-transform: uppercase; }
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* BANNER UPLOADER */
+.banner-upload-container {
+  margin-bottom: 15px;
+}
+
+.banner-label-text {
+  color: #888;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.banner-preview-box {
+  width: 100%;
+  height: 120px;
+  border-radius: 12px;
+  background-color: #2a2a2a;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  border: 2px dashed #444;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-preview-box:hover {
+  border-color: #3a86ff;
+  border-style: solid;
+  background-color: #1a1a1a;
+}
+
+.banner-preview-box:hover .upload-overlay {
+  opacity: 1;
+}
+
+/* UPLOAD OVERLAY */
+.upload-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.upload-overlay.visible-always {
+  opacity: 1;
+}
+
+.upload-icon {
+  font-size: 32px;
+  transition: transform 0.3s ease;
+}
+
+.banner-preview-box:hover .upload-icon {
+  transform: scale(1.1);
+}
+
+.upload-text {
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  font-weight: 600;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.banner-preview-box:hover .upload-text {
+  color: #3a86ff;
+}
+
+/* Hidden file input */
+.hidden-input {
+  display: none;
+}

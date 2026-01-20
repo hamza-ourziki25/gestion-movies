@@ -1,0 +1,219 @@
+/* src/pages/profile.css */
+
+/* 1. THE BANNER AREA */
+.profile-banner {
+  height: 300px;
+  width: 100%;
+  background-image: url('https://image.tmdb.org/t/p/original/8rpDcsfLJypbO6vREc05475qg9s.jpg'); /* Default Anime Banner */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* Dark fade at the bottom of banner */
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.profile-content {
+  padding: 0 40px;
+  margin-top: -60px; /* Pull content up over the banner */
+  position: relative;
+}
+
+/* 2. HEADER: Avatar + Name + Stats */
+.profile-header-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.user-identity {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.profile-avatar-xl {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: #333; /* Fallback */
+  background-size: cover;
+  background-position: center;
+  border: 5px solid #0f0f0f; /* Match background to create "cutout" effect */
+  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+}
+
+.user-text h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.user-text p {
+  color: #aaa;
+  margin: 5px 0 0 0;
+  font-size: 0.9rem;
+}
+
+.profile-stats-row {
+  display: flex;
+  gap: 30px;
+  padding-bottom: 10px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-val {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: block;
+  color: white;
+}
+
+.stat-lbl {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+}
+
+/* 3. NAVIGATION TABS (Like Serializd) */
+.profile-nav-tabs {
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid #222;
+  margin-bottom: 40px;
+  overflow-x: auto; /* Scroll if too many tabs */
+}
+
+.tab-link {
+  padding: 15px 0;
+  color: #888;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.tab-link:hover { color: white; }
+
+.tab-link.active {
+  color: white;
+  font-weight: bold;
+}
+
+.tab-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #3a86ff; /* Blue accent */
+}
+
+/* 4. MAIN GRID LAYOUT */
+.profile-grid-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* Left Sidebar (Bio) + Right Content */
+  gap: 40px;
+}
+
+/* Left Column: Bio & Charts */
+.left-col-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.bio-text {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+/* Fake Bar Chart Visual */
+.fake-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 100px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+.bar {
+  flex: 1;
+  background: #3a86ff;
+  border-radius: 4px 4px 0 0;
+  opacity: 0.7;
+}
+
+/* Right Column: Favorites */
+.section-heading {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  border-left: 4px solid #ff006e;
+  padding-left: 15px;
+}
+
+.favorites-row {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.fav-card {
+  min-width: 140px;
+  width: 140px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.fav-card:hover { transform: translateY(-5px); }
+.fav-poster { width: 100%; height: 210px; object-fit: cover; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profile-grid-layout { grid-template-columns: 1fr; }
+  .profile-header-section { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .profile-content { margin-top: -40px; }
+  .profile-stats-row { width: 100%; justify-content: space-around; }
+}
+
+/* src/pages/profile.css */
+
+.profile-nav-tabs {
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid #222;
+  margin-bottom: 40px;
+  overflow-x: auto; /* Allows scrolling */
+  
+  /* HIDE SCROLLBAR (Firefox) */
+  scrollbar-width: none; 
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+/* HIDE SCROLLBAR (Chrome, Safari, Opera) */
+.profile-nav-tabs::-webkit-scrollbar { 
+  display: none; 
+}
+
+.tab-link {
+  padding: 15px 0;
+  color: #888;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+  white-space: nowrap; /* Prevents text wrapping */
+}
+/* ... rest of CSS */

@@ -1,0 +1,91 @@
+/* src/components/skeleton.css */
+
+/* The Shimmer Effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: #1a1a1a;
+  background-image: linear-gradient(
+    90deg, 
+    #1a1a1a 25%, 
+    #222 50%, 
+    #1a1a1a 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+/* Specific Shapes */
+.sk-banner {
+  width: 100%;
+  height: 300px;
+}
+
+.sk-avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 5px solid #0f0f0f;
+  margin-top: -65px; /* Overlap banner */
+  position: relative;
+  z-index: 2;
+}
+
+.sk-text {
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.sk-title {
+  height: 30px;
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+.sk-stat {
+  width: 60px;
+  height: 40px;
+}
+
+.sk-card {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+}
+
+/* Layout Helpers to match Profile.css */
+.sk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 40px;
+  margin-bottom: 30px;
+}
+
+.sk-info-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.sk-tabs {
+  margin: 0 40px 40px 40px;
+  height: 40px;
+  border-bottom: 1px solid #222;
+}
+
+.sk-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 40px;
+  padding: 0 40px;
+}
+
+@media (max-width: 900px) {
+  .sk-grid { grid-template-columns: 1fr; }
+  .sk-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+}

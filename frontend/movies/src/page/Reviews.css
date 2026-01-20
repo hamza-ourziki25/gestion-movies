@@ -1,0 +1,38 @@
+/* src/pages/reviews.css */
+.review-card {
+  background: #161616;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.review-poster {
+  width: 80px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.review-content {
+  flex: 1;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.reviewer-name { font-weight: bold; color: #3a86ff; }
+.movie-name { color: #888; margin-left: 5px; }
+
+.star-rating { color: #ffbe0b; }
+
+.review-text {
+  color: #ddd;
+  line-height: 1.5;
+  margin-top: 10px;
+}

@@ -1,0 +1,170 @@
+/* src/auth/logup.css */
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #ff006e, #ffbe0b);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --input-bg: rgba(0, 0, 0, 0.3);
+  --text-muted: #aaaaaa;
+}
+
+.logup-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f0f0f;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 0, 110, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(58, 134, 255, 0.15) 0%, transparent 20%);
+  padding: 20px;
+}
+
+.logup-card {
+  width: 100%;
+  max-width: 800px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.6s ease-out;
+  position: relative;
+}
+
+.logup-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logup-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.logup-header p { color: var(--text-muted); }
+
+/* Grid System */
+.logup-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group.full-width { grid-column: span 2; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-left: 5px;
+}
+
+.form-input {
+  background: var(--input-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #ff006e;
+  box-shadow: 0 0 0 4px rgba(255, 0, 110, 0.1);
+}
+
+/* ERROR STYLES */
+.input-error {
+  border-color: #ff2e63;
+}
+
+.error-text {
+  color: #ff2e63;
+  font-size: 0.8rem;
+  margin-left: 5px;
+  margin-top: 2px;
+}
+
+/* Button */
+.submit-btn {
+  grid-column: span 2;
+  margin-top: 15px;
+  padding: 16px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ff006e, #ff2e63, #3a86ff);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 0, 110, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.close-btn:hover { background: #ff006e; }
+
+@media (max-width: 768px) {
+  .logup-form { grid-template-columns: 1fr; }
+  .form-group.full-width { grid-column: span 1; }
+  .submit-btn { grid-column: span 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Add to src/pages/logup.css */
+
+.success-message {
+  background-color: #00b894; /* Green */
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+  animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

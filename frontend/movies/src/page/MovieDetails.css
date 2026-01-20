@@ -1,0 +1,114 @@
+.details-container {
+  background: #0f0f0f;
+  min-height: 100vh;
+  color: white;
+  padding-bottom: 50px;
+}
+
+.backdrop-header {
+  height: 60vh;
+  position: relative;
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.content-wrapper {
+  max-width: 1100px;
+  margin: -200px auto 0; /* Pull content up over the backdrop */
+  position: relative;
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+}
+
+.poster-large {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.info-column {
+  flex: 1;
+  padding-top: 50px;
+}
+
+.movie-headline h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.meta-data {
+  display: flex;
+  gap: 20px;
+  color: #888;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.tagline {
+  font-style: italic;
+  color: #ff006e;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.overview {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-bottom: 40px;
+}
+
+.cast-grid {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.actor-card {
+  min-width: 100px;
+  text-align: center;
+}
+
+.actor-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+  border: 2px solid #333;
+}
+
+.actor-name { font-size: 0.8rem; font-weight: bold; }
+.character-name { font-size: 0.7rem; color: #777; }
+
+.back-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper { flex-direction: column; margin-top: -100px; }
+  .poster-large { width: 200px; margin: 0 auto; }
+  .info-column { text-align: center; padding-top: 20px; }
+  .meta-data { justify-content: center; }
+}
